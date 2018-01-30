@@ -1,0 +1,134 @@
+/* styles.css */
+
+/* Body background */
+body {
+	background-color: lightblue;
+}
+
+/* Menu bar at top */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width:100%;
+    background-color: #333;
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+/* Color Scheme */
+
+/* 
+
+https://color.adobe.com/dc6a9cd68e98073387aee48ef6bcbc9d--dark-purple-color-scheme-jewel-tone-color-scheme-color-theme-10408143/edit/?copy=true&base=2&rule=Custom&selected=4&name=Copy%20of%20dc6a9cd68e98073387aee48ef6bcbc9d--dark-purple-color-scheme-jewel-tone-color-scheme&mode=rgb&rgbvalues=0.3568627450980392,0.043137254901960784,0.2980392156862745,0.2823529411764706,0.13333333333333333,0.3333333333333333,0.1843137254901961,0.23529411764705882,0.3686274509803922,0.10196078431372549,0.3333333333333333,0.403921568627451,0,0.44313725490196076,0.4392156862745098&swatchOrder=0,1,2,3,4
+
+*/
+
+body {
+    font-size: 16px;
+}
+
+.container {
+    display: grid;
+
+    /*  Define the size and number of columns in our grid. 
+    The fr unit works similar to flex:
+    fr columns will share the free space in the row in proportion to their value.
+    We will have 2 columns - the first will be 3x the size of the second.  */
+    grid-template-columns: 1fr 6fr 2fr;
+
+    /*  Assign the grid areas we did earlier to specific places on the grid. 
+        First row is all header.
+        Second row is shared between main and sidebar.
+        Last row is all footer.  */
+    grid-template-areas: 
+        "logo header header"
+	"menu menu menu"
+        "main main sidebar"
+        "footer footer footer";
+
+    /*  The gutters between each grid cell will be 30 pixels. */
+    grid-gap: 10px 20px;
+}
+
+div {
+    /*text-align: left; */
+    color: #fff; /* text color */
+    box-sizing: border-box;
+    padding: 10px; /* distance text is from edge of box */
+}
+.logo {
+    grid-area:logo;
+    text-align: center;
+    height:auto;
+}
+.sidebar {
+    grid area:sidebar;
+    text-align:center;
+    background-color:#5B0B4C;
+}
+
+
+.header {
+    grid-area: header;
+    background-color: #5B0B4C;
+    height: 80px;
+}
+
+.menu {
+    grid-area: menu;
+    height:60px;
+}
+
+
+.main {
+    grid-area: main;
+    background-color: #2F3C5E;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #007170;
+    height: 50px;
+    text-align:center;
+}
+
+/* Flex */
+
+.flexbox {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    width: 100%;
+    height: 400px;
+}
+
+.flexbox div {
+    margin: 10px;
+}
+
+.flexbox div img {
+    width: 200px;
+    height:auto;
+}
+
