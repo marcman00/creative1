@@ -2,7 +2,11 @@
 
 /* Body background */
 body {
-	background-color: lightblue;
+	/*background-color: #F0B27A;*/
+	background-color:#fff;
+	font-size: 16px;
+        font-family: 'Open Sans',sans-serif;
+	background-color: #F0B27A;
 }
 
 /* Menu bar at top */
@@ -10,9 +14,9 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    /*position: fixed;*/
     overflow: hidden;
-    width:100%;
-    background-color: #333;
+    width: 100%;
 }
 
 nav li {
@@ -28,43 +32,23 @@ nav li a {
 }
 
 nav li a:hover {
-    background-color: #111;
+    background-color: #BA4A00;
 }
 
 .active {
     background-color: #4CAF50;
 }
 
-/* Color Scheme */
-
-/* 
-
-https://color.adobe.com/dc6a9cd68e98073387aee48ef6bcbc9d--dark-purple-color-scheme-jewel-tone-color-scheme-color-theme-10408143/edit/?copy=true&base=2&rule=Custom&selected=4&name=Copy%20of%20dc6a9cd68e98073387aee48ef6bcbc9d--dark-purple-color-scheme-jewel-tone-color-scheme&mode=rgb&rgbvalues=0.3568627450980392,0.043137254901960784,0.2980392156862745,0.2823529411764706,0.13333333333333333,0.3333333333333333,0.1843137254901961,0.23529411764705882,0.3686274509803922,0.10196078431372549,0.3333333333333333,0.403921568627451,0,0.44313725490196076,0.4392156862745098&swatchOrder=0,1,2,3,4
-
-*/
-
-body {
-    font-size: 16px;
-}
-
 .container {
     display: grid;
 
-    /*  Define the size and number of columns in our grid. 
-    The fr unit works similar to flex:
-    fr columns will share the free space in the row in proportion to their value.
-    We will have 2 columns - the first will be 3x the size of the second.  */
-    grid-template-columns: 1fr 6fr 2fr;
+    grid-template-columns: 1fr 4fr 1fr 1fr;
 
-    /*  Assign the grid areas we did earlier to specific places on the grid. 
-        First row is all header.
-        Second row is shared between main and sidebar.
-        Last row is all footer.  */
     grid-template-areas: 
-        "logo header header"
-	"menu menu menu"
-        "main main sidebar"
-        "footer footer footer";
+	"L_space menu menu R_space"        
+	"L_space header header R_space"	
+        "L_space main main R_space"
+        "L_space footer footer R_space";
 
     /*  The gutters between each grid cell will be 30 pixels. */
     grid-gap: 10px 20px;
@@ -72,63 +56,123 @@ body {
 
 div {
     /*text-align: left; */
-    color: #fff; /* text color */
+    color: #000; /* text color */
     box-sizing: border-box;
-    padding: 10px; /* distance text is from edge of box */
+    padding-left: 10px; /* distance text is from edge of box */
+    
 }
-.logo {
-    grid-area:logo;
-    text-align: center;
-    height:auto;
+.R_space {
+    grid-area: R_space;
+}
+.L_space {
+    grid-area: L_space;
 }
 .sidebar {
     grid area:sidebar;
     text-align:center;
-    background-color:#5B0B4C;
 }
 
 
 .header {
     grid-area: header;
-    background-color: #5B0B4C;
     height: 80px;
+    padding-left:20px;
 }
 
 .menu {
     grid-area: menu;
-    height:60px;
+    height:50px;
+    padding:0px;
+    background-color: #333;
 }
 
 
 .main {
     grid-area: main;
-    background-color: #2F3C5E;
+    /*background-color: #2F3C5E;*/
+    min-height:400px;
+    padding-left:59px;
 }
 
 .footer {
     grid-area: footer;
-    background-color: #007170;
+    background-color: #333;
     height: 50px;
     text-align:center;
+    padding:15px;
+}
+.footer a {
+	color:#fff
 }
 
-/* Flex */
+/* Seminar Grid */
+.seminargrid {
+  display: grid;
 
-.flexbox {
-    display: flex;
-    justify-content: flex-start;
-    flex-flow: column wrap;
-    align-items: flex-start;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+	"topic1 topic2"
+	"topic3 topic3";
+    padding-left:0px;
+}
+.seminargrid u {
+	font-size:18px;
+}
+.topic1 { grid-area:topic1; }
+.topic2 { grid-area:topic2; }
+.topic3 {
+	grid-area:topic3;
+	padding-left:20%;
+	padding-top:10px;
+}
+
+/* My form */
+
+input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+input:focus {
+    border:2px solid #BA4A00;
+}
+input[type=text], textarea {
     width: 100%;
-    height: 400px;
 }
 
-.flexbox div {
-    margin: 10px;
+input[type=tel] {
+    width:25%;
+}
+input[type=email] {
+    width:60%;
+}
+input[type=select] {
+    /*background-color: #f1f1f1;*/
 }
 
-.flexbox div img {
-    width: 200px;
-    height:auto;
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float:right;
 }
 
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.myform {
+    border-radius: 5px;
+    background-color: #4CAF50;
+    padding: 20px;
+    width:70%;
+    margin-bottom:20px;
+    padding-bottom:60px;
+}

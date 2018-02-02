@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>April Reynolds Training</title>
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+</head>
+
+<body>
+<div class="container">
+
+<div class="menu">
+<nav><ul>
+	<li><a href="index.html">Home</a></li>
+	<li><a href="seminar.html">Seminar Topics</a></li>
+	<li><a class="active" href="contact.html">Contact</a></li>
+	<li><a href="about.html">About</a></li>
+</ul></nav>
+</div>
+
+<div class="header"><p>
+<img src="/pictures/StepUpLogo2.png" height=40 style="float:left; margin:5px">
+<h1>April Reynolds Training: Contact</h1>
+</div>
+<div class="L_space"></div><div class="R_space"></div>
+<div class="main">
+<h2>Let's work together-- Contact Me!</h2>
+
+<div class="myform">
+  <form action="#">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+
+    <label for="phone">Phone Number</label><br>
+    <input type="tel" id="phone" name="phonenumber" placeholder="###-###-####" maxlength="12" required>
+    <br>
+    <label for="email">Email Address</label><br>
+    <input type="email" id="email" name="emailaddress" placeholder="your@email.com" required>
+    <br>
+    <label for="contact">Preferred Method of Contact</label><br>
+    <select id="contact" name="contact">
+      <option value="contact_email">Email</option>
+      <option value="contact_phone">Phone</option>
+      <option value="contact_carrierpidgeon">Carrier Pidgeon</option>
+    </select>
+    <br><br>
+
+    <label for="org">Organization</label>
+    <input type="text" id="org" name="organization" placeholder="Your organization..." required>
+
+    <label for="budget">What Budget Do You Have In Mind?</label>
+    <input type="text" id="budget" name="budget_in_mind" placeholder="$" required>
+
+   <label for="message">Message</label>
+    <textarea id="message" name="message_to_april" placeholder="Write something.." style="height:200px" required></textarea>
+
+  
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+<!--
+Have a message come up after it is successfully submitted:
+Thank you for your message! I will get back with you in 1-2 business days. Let’s see how I can help to you and your organization to be inspired to be even better at what you do!
+-->
+
+<div class="footer"><a href="https://github.com/marcman00/creative1.git">Creative Project 1 Repository</a>
+</div>
+</body>
+</html>
